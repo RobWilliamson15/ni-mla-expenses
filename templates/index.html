@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Expense Contributions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Expense Contributions</h1>
+      <div class="mt-3">
+        {% for category, data in results.items() %}
+        <div class="card mb-3">
+          <div class="card-header">
+            {{ category }}
+          </div>
+          <div class="card-body">
+            <p><strong>Largest Contribution:</strong> {{ data.max }} (£{{ data.max_value }})</p>
+            <p><strong>Least Contribution:</strong> {{ data.min }} (£{{ data.min_value }})</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
+
